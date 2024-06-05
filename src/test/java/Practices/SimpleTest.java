@@ -15,7 +15,7 @@ public class SimpleTest {
 
 
     @BeforeMethod
-    public void Config(){
+    public void setConfig(){
 
         driver = new ChromeDriver();
         driver.get(url);
@@ -34,23 +34,15 @@ public class SimpleTest {
     @Test(priority = 1)
     public void enterInvalidUserNameLoginData(){
 
-        //FindElements and sendKeys (userName - Password)
+        
         driver.findElement(By.cssSelector("#username")).sendKeys("tomsm");
-        driver.findElement(By.cssSelector("#password")).sendKeys("SuperSecretPassword!");
-
-        //Click On Element Button
+        driver.findElement(By.cssSelector("#password")).sendKeys("SuperSecretPassword!");        
         driver.findElement(By.cssSelector(".radius")).click();
 
-        //Assertion between ExpectedResult - ActualResult
-        String ActualValidationError = driver.findElement(By.cssSelector("#flash")).getText();
-        String ExpectedSuccessMessage = "Your username is invalid!\n" + "×";
+        
+        String ectualValidationError = driver.findElement(By.cssSelector("#flash")).getText();
+        String expectedSuccessMessage = "Your username is invalid!\n" + "×";
         Assert.assertEquals(ActualValidationError , ExpectedSuccessMessage);
-
-        //Print an ErrorMessage
-        System.out.println(ActualValidationError);
-
-
-
 
     }
 
@@ -59,45 +51,37 @@ public class SimpleTest {
     @Test(priority = 2)
     public void enterInvalidPasswordLoginData(){
 
-        //FindElements and sendKeys (userName - Password)
+        
         driver.findElement(By.cssSelector("#username")).sendKeys("tomsmith");
         driver.findElement(By.cssSelector("#password")).sendKeys("SuperSecret");
-
-        //Click On Element Button
         driver.findElement(By.cssSelector(".radius")).click();
 
-
-        ////Assertion between ExpectedResult - ActualResult
-        String ActualValidationErrorPassMessage = driver.findElement(By.cssSelector("#flash")).getText();
-        String ExpValidationErrorPassMessage = "Your password is invalid!\n" + "×";
+        
+        String actualValidationErrorPassMessage = driver.findElement(By.cssSelector("#flash")).getText();
+        String expValidationErrorPassMessage = "Your password is invalid!\n" + "×";
         Assert.assertTrue(ActualValidationErrorPassMessage.contains(ExpValidationErrorPassMessage));
-
-        //Print an ErrorMessage
-        System.out.println(ActualValidationErrorPassMessage);
-
-
 
     }
 
 
     @Test(priority = 3)
-    public void enterValidData(){
+    public void enterValidLoginData(){
 
-        //FindElements and sendKeys (userName - Password)
+        
         driver.findElement(By.xpath("//input[@id='username']")).sendKeys("tomsmith");
-        driver.findElement(By.xpath("//input[@id='password']")).sendKeys("SuperSecretPassword!");
-
-        //Click On Element Button
+        driver.findElement(By.xpath("//input[@id='password']")).sendKeys("SuperSecretPassword!");        
         driver.findElement(By.xpath("//button[@type='submit']")).click();
-
-
-        //Assertion between ExpectedResult - ActualResult
-        String ActualSuccessMessage = driver.findElement(By.xpath("//div[@id='flash']")).getText();
-        String ExpectedSuccessMessage = "You logged into a secure area!";
+        
+        
+        String actualSuccessMessage = driver.findElement(By.xpath("//div[@id='flash']")).getText();
+        String expectedSuccessMessage = "You logged into a secure area!";
         Assert.assertTrue(ActualSuccessMessage.contains(ExpectedSuccessMessage));
 
+<<<<<<< HEAD
         //Print a SuccessMessage
         System.out.println(ActualSuccessMessage);
+=======
+>>>>>>> fb363e7a6b4e2d529ba9a08d6fc3af84ac9cb980
     }
 
 }
