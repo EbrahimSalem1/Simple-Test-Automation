@@ -25,6 +25,7 @@ public class SimpleTest {
     @AfterMethod
     public void tearDown(){
 
+        //PostConditions
         driver.quit();
     }
 
@@ -97,9 +98,6 @@ public class SimpleTest {
 
         //Print a SuccessMessage
         System.out.println(ActualSuccessMessage);
-
-
-
     }
 
 }

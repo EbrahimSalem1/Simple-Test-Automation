@@ -1,0 +1,15 @@
+[
+  {
+    "name1":"Admin",
+    "password1":"%%admin123"
+  },
+  {
+    "name2":"Admin",
+    "password2":"??admin>*123"
+  },
+  {
+    "name3":"Admin",
+    "password3":"admin123"
+  }
+
+]

@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TestAutomation01">
+    <listeners>
+        <listener class-name="base.TestListeners"> <!-- the directory of the listeners class in the project-->
+        </listener>
+    </listeners>
+    <test name="LoginNegative">
+        <classes>
+            <class name="login.LoginTest">
+            </class>
+        </classes>
+    </test>
+</suite>
