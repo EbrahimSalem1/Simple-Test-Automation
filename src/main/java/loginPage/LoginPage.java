@@ -26,8 +26,9 @@ public class LoginPage {
     }
 
     @Step
-    public void enterPassword(String pass){
+    public String enterPassword(String pass){
         driver.findElement(passwordInput).sendKeys(pass);
+        return pass;
     }
 
     @Step

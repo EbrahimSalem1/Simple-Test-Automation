@@ -1,7 +1,7 @@
 [
   {
-    "name1":"Admin",
-    "password1":"%%admin123"
+    "name1":"&*AdmIn++",
+    "password1":"admin123"
   },
   {
     "name2":"Admin",
@@ -9,7 +9,7 @@
   },
   {
     "name3":"Admin",
-    "password3":"admin123"
+    "password3":"%admin123"
   }
 
 ]

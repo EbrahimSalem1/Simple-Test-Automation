@@ -16,7 +16,7 @@ public class LoginTest extends BaseTest {
 
 
     @Test
-    public void testEnterInvalidLoginPasswordAndClickLoginBtn1(){
+    public void testEnterLoginInValidUserNameAndValidPasswordAndClickLoginAndValidationErrorMessage(){
 
         LoginPage log1 = log;
         log1.enterUserName(readJson(filePath , "name1"));
@@ -29,7 +29,7 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    public void testEnterValidLoginPasswordAndClickLoginBtn2(){
+    public void testEnterValidLoginPasswordAndClickLoginBtnAndValidationErrorMessageIsSuccessfully(){
 
         LoginPage logValid = log;
         logValid.enterUserName(readJson(filePath , "name2"));
@@ -39,11 +39,20 @@ public class LoginTest extends BaseTest {
 
     }
     @Test
-    public void testEnterValidLoginPasswordAndClickLoginBtn3(){
+    public void testEnterLoginValidUserNameAndValidPasswordAndClickLoginBtnToLoggedIn(){
 
         LoginPage logValid = log;
         logValid.enterUserName(readJson(filePath , "name3"));
         logValid.enterPassword(readJson(filePath , "password3"));
+        logValid.clickOnLoginBtn();
+    }
+
+    @Test
+    public void testEnterInValidLoginPasswordAndClickLoginBtnAndAssertIt(){
+        LoginPage logValid = log;
+        logValid.enterUserName(readJson(filePath , "name3"));
+        String invalidPass = logValid.enterPassword(readJson(filePath , "password3"));
+        Assert.assertEquals(invalidPass , "admin123");
         logValid.clickOnLoginBtn();
     }
 }
