@@ -25,7 +25,7 @@ public class BaseTest {
 
    @BeforeMethod
    public void testSetUp1(){
-       driver = new ChromeDriver();
+       driver = new FirefoxDriver();
        driver.get(url);
        driver.manage().window().maximize();
        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
