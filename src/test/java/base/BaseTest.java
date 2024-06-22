@@ -17,7 +17,7 @@ import java.time.Duration;
 
 public class BaseTest {
 
-    WebDriver driver; 
+    public WebDriver driver; 
     protected LoginPage log;
     protected String url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
 
