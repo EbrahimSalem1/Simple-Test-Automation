@@ -1,0 +1,19 @@
+name : runs unit tests of feature branches
+on: 
+  push :
+    branches: 
+      'feature/*'
+jobs:
+    run-unit-test : 
+      runs-on: ubunto-latest
+
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4.1.7 
+
+        - name: run-unit-test 
+          run: mvn test
+      
+    
+    
+    
