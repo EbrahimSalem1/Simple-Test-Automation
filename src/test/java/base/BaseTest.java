@@ -17,7 +17,7 @@ import java.time.Duration;
 
 public class BaseTest {
 
-    public WebDriver driver; 
+    WebDriver driver; 
     protected LoginPage log;
     protected String url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
 
@@ -25,7 +25,7 @@ public class BaseTest {
 
    @BeforeMethod
    public void testSetUp1(){
-       driver = new FirefoxDriver();
+       driver = new ChromeDriver();
        driver.get(url);
        driver.manage().window().maximize();
        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
