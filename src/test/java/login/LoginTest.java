@@ -15,7 +15,7 @@ public class LoginTest extends BaseTest {
     String filePath = System.getProperty("user.dir") + "\\src\\test\\resources\\jsonData\\login.json";
 
 
-    @Test
+      @Test
     public void testEnterLoginInValidUserNameAndValidPasswordAndClickLoginAndValidationErrorMessage(){
 
         LoginPage log1 = log;
