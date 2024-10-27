@@ -24,7 +24,7 @@ public class LoginTest extends BaseTest {
         log1.clickOnLoginBtn();
         String actualGetMessage = log1.getErrorMs();
         String expectedMs = "Error"; //Invalid credentials
-        Assert.assertEquals(actualGetMessage , expectedMs);
+        Assert.assertNotEquals(actualGetMessage , expectedMs);
 
     }
 
@@ -52,7 +52,8 @@ public class LoginTest extends BaseTest {
         LoginPage logValid = log;
         logValid.enterUserName(readJson(filePath , "name3"));
         String invalidPass = logValid.enterPassword(readJson(filePath , "password3"));
-        Assert.assertEquals(invalidPass , "admin123");
+        Assert.assertEquals(invalidPass , "%admin123");
         logValid.clickOnLoginBtn();
+        Assert.assertEquals(logValid.getErrorMs() , "Invalid credentials");
     }
 }

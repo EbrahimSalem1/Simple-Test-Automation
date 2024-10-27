@@ -10,6 +10,9 @@
   {
     "name3":"Admin",
     "password3":"%admin123"
+  },
+  {
+    "name4":"Admin",
+    "password4":"%admin345"
   }
-
 ]

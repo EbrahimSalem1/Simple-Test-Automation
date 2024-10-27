@@ -1,5 +1,8 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="TestAutomation01">
+<suite name="TestAutomation01" thread-count="2" verbose="1" parallel="tests">
+<!--    <suite thread-count="2" verbose="1" name="Parallel Test Suite" annotations="JDK" parallel="tests">-->
+<!--    <parameter name="Browser" value="chrome">-->
+<!--    </parameter>-->
     <listeners>
         <listener class-name="base.TestListeners"> <!-- the directory of the listeners class in the project-->
         </listener>
@@ -10,4 +13,11 @@
             </class>
         </classes>
     </test>
+
+<!--    <test name="SimpleTest">-->
+<!--        <classes>-->
+<!--            <class name="Practices.SimpleTest">-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
