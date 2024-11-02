@@ -86,13 +86,22 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
-                <groupId>org.apache.maven.plugins</groupId>
+               <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>1.9.22</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.13.0</version>     
                 <configuration>
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/testNG.xml</suiteXmlFile>
-                    </suiteXmlFiles>
+                    </suiteXmlFiles>         
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.9.22/aspectjweaver-1.9.22.jar"
                     </argLine>
@@ -100,16 +109,9 @@
                         <propertyName>allure.results.directory</propertyName>
                         <buildDirectory>src/main/resources/reports/allure-results</buildDirectory>
                     </systemPropertyVariables>
-                </configuration>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.aspectj</groupId>
-                        <artifactId>aspectjweaver</artifactId>
-                        <version>1.9.22</version>
-                    </dependency>
-                </dependencies>
-            </plugin>   
-        </plugins>
+                </configuration> 
+            </plugin>             
+       </plugins>
         </pluginManagement>         
     </build>
 </project>
