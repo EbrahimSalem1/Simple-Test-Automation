@@ -1,5 +1,4 @@
 package base;
-
 import loginPage.LoginPage;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -13,7 +12,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import utilis.UtilityConf;
 import utilities.UtilitsTest;
-
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
