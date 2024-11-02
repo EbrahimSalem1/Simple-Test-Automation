@@ -1,23 +1,20 @@
-name: CI/CD Regression
-
-on:
+name : CI CD run Tests
+on: 
   push:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-
+    
 jobs:
-  build:
+    run-unit-test : 
+      runs-on: ubunto-latest
 
-    runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v4.1.7 
 
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-          cache: maven
-      - name: Build with Maven
-        run: mvn test 
+        - name: run-unit-test 
+          run: mvn test
+
+
+
